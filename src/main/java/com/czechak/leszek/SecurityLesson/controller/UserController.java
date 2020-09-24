@@ -22,7 +22,7 @@ public class UserController {
 
 
     @GetMapping("/all")
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Set<UserEntity>> getAllUsers(){
         return ResponseEntity.ok(userService.getAllUsers());
     }
