@@ -2,10 +2,8 @@ package com.czechak.leszek.SecurityLesson.service;
 
 import com.czechak.leszek.SecurityLesson.dto.NewUserRequest;
 import com.czechak.leszek.SecurityLesson.model.user.UserEntity;
-import com.czechak.leszek.SecurityLesson.model.user.UserRole;
 import com.czechak.leszek.SecurityLesson.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -58,15 +56,12 @@ public class UserService implements UserDetailsService {
             username = ((UserDetails)principal).getUsername();
         } else {
             username = principal.toString();
-
         }
-
         if(userEntity.getUsername().equals(username)) {
             return userEntity;
         } else {
             throw new AccessDeniedException("Access denied");
         }
-
     }
 
     @Transactional
