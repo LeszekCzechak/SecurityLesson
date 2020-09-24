@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.AccessDeniedException;
 import java.util.Set;
 
 @RestController
@@ -28,7 +29,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UserEntity> getUserById(@PathVariable(value = "id") Long id){
+    public ResponseEntity<UserEntity> getUserById(@PathVariable(value = "id") Long id) throws AccessDeniedException {
         UserEntity userEntity = userService.getUserById(id);
         return ResponseEntity.ok(userEntity);
     }
