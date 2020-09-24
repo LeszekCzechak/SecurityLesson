@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: 'bskgmvgsdvchfu'
+    password: 'b102e872539a41af6a4d1d7ac86504d68d066905328d316b4bb1fbf77497d28b'
+    url: 'jdbc:postgresql://ec2-54-246-85-151.eu-west-1.compute.amazonaws.com:5432/dbvudrf8hhf14n'
+    continue-on-error: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+#
+#  security:
+#    user:
+#      name: admin
+#      password: admin
