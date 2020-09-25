@@ -6,7 +6,6 @@ import com.czechak.leszek.SecurityLesson.dto.NewUserRequest;
 import com.czechak.leszek.SecurityLesson.model.user.UserEntity;
 import com.czechak.leszek.SecurityLesson.service.UserService;
 import com.czechak.leszek.SecurityLesson.util.JwtUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,17 +23,14 @@ import java.util.Set;
 @RequestMapping("/users")
 public class UserController {
 
-
     private final UserService userService;
+    private final AuthenticationManager authenticationManager;
+    private final JwtUtil jwtTokenUtil;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
-    private JwtUtil jwtTokenUtil;
-
-    public UserController(UserService userService) {
+    public UserController(UserService userService, AuthenticationManager authenticationManager, JwtUtil jwtTokenUtil) {
         this.userService = userService;
+        this.authenticationManager = authenticationManager;
+        this.jwtTokenUtil = jwtTokenUtil;
     }
 
     @PostMapping("/authenticate")

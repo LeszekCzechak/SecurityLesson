@@ -3,7 +3,6 @@ package com.czechak.leszek.SecurityLesson.service;
 import com.czechak.leszek.SecurityLesson.dto.NewUserRequest;
 import com.czechak.leszek.SecurityLesson.model.user.UserEntity;
 import com.czechak.leszek.SecurityLesson.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +20,6 @@ import java.util.stream.Collectors;
 public class UserService implements UserDetailsService {
 
     private final UserRepository userRepository;
-    @Autowired
     private final BCryptPasswordEncoder passwordEncoder;
 
     public UserService(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {

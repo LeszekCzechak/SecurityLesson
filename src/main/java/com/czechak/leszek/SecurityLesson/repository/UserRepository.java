@@ -1,7 +1,6 @@
 package com.czechak.leszek.SecurityLesson.repository;
 
 import com.czechak.leszek.SecurityLesson.model.user.UserEntity;
-import org.hibernate.annotations.Parameter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
