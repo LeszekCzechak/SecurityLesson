@@ -24,12 +24,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/home","/users/register").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .formLogin().permitAll()
-                .and()
-                .logout().permitAll();
+                .antMatchers("/", "/home","/users/register","/authenticate").permitAll()
+                .anyRequest().authenticated();
+//                .and()
+//                .formLogin().permitAll()
+//                .and()
+//                .logout().permitAll();
     }
 
     @Bean
