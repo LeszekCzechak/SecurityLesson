@@ -1,5 +1,7 @@
 package com.czechak.leszek.SecurityLesson.model.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +26,7 @@ public class UserEntity implements UserDetails {
     @Column(unique = true, nullable = false)
     private String username;
     @Column(nullable = false)
+    @JsonIgnore
     private String password;
     @Column
     private boolean isAccountNonExpired;

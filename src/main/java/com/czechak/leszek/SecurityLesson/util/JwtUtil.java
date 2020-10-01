@@ -1,6 +1,5 @@
 package com.czechak.leszek.SecurityLesson.util;
 
-import com.czechak.leszek.SecurityLesson.model.user.UserEntity;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

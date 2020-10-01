@@ -23,7 +23,7 @@ public class UserService implements UserDetailsService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserService(@Lazy UserRepository userRepository,@Lazy BCryptPasswordEncoder passwordEncoder) {
+    public UserService(@Lazy UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
